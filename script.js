@@ -1,7 +1,28 @@
 /* ============================================
-   MONO Creative Studio — JavaScript
+   BASTION Capital — JavaScript
    Interactions, animations, cursor, scroll
    ============================================ */
+
+/*
+ * EmailJS setup — https://www.emailjs.com/
+ * 1. Create a free account
+ * 2. Add an Email Service (Gmail, Outlook, SMTP, etc.)
+ * 3. Create an Email Template with variables:
+ *      {{from_name}}, {{from_email}}, {{inquiry_type}}, {{message}}
+ * 4. Replace the three IDs below with your real values.
+ *
+ * The form sends to: shizuniu@sewjixcapital.com
+ * (set this as the "To Email" in your EmailJS template)
+ */
+const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';   // e.g. 'abc123XYZ'
+const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';   // e.g. 'service_xxxxxx'
+const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';  // e.g. 'template_xxxxxx'
+
+/*
+ * BTC Price Ticker — intentionally static at $87,420.
+ * The value lives in the HTML and is never fetched from a live API,
+ * so it will always display exactly $87,420.
+ */
 
 (function () {
   'use strict';
@@ -233,20 +254,57 @@
     });
   });
 
-  /* ---- Contact Form ---- */
+  /* ---- Contact Form (EmailJS) ---- */
+  emailjs.init(EMAILJS_PUBLIC_KEY);
+
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
+
       const btn = contactForm.querySelector('.btn-submit');
       const originalHTML = btn.innerHTML;
-      btn.innerHTML = '<span>Message Sent ✓</span>';
-      btn.style.background = 'var(--highlight)';
-      setTimeout(() => {
-        btn.innerHTML = originalHTML;
-        btn.style.background = '';
-        contactForm.reset();
-      }, 3000);
+
+      // Sending state
+      btn.innerHTML = '<span>Sending…</span><span class="btn-arrow">↻</span>';
+      btn.disabled = true;
+
+      const templateParams = {
+        from_name:    document.getElementById('name').value,
+        from_email:   document.getElementById('email').value,
+        inquiry_type: document.getElementById('service').value,
+        message:      document.getElementById('message').value,
+        // This must match the "To Email" field in your EmailJS template
+        to_email:     'shizuniu@sewjixcapital.com',
+      };
+
+      emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+        .then(() => {
+          // Success state
+          btn.innerHTML = '<span>Inquiry Sent ✓</span><span class="btn-arrow">✓</span>';
+          btn.style.background = 'var(--highlight)';
+          btn.style.color = 'var(--black)';
+          contactForm.reset();
+          setTimeout(() => {
+            btn.innerHTML = originalHTML;
+            btn.style.background = '';
+            btn.style.color = '';
+            btn.disabled = false;
+          }, 4000);
+        })
+        .catch((err) => {
+          // Error state
+          console.error('EmailJS error:', err);
+          btn.innerHTML = '<span>Failed — Try Again</span>';
+          btn.style.background = '#c0392b';
+          btn.style.color = '#fff';
+          setTimeout(() => {
+            btn.innerHTML = originalHTML;
+            btn.style.background = '';
+            btn.style.color = '';
+            btn.disabled = false;
+          }, 3500);
+        });
     });
   }
 
