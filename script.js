@@ -8,26 +8,17 @@
 
   /* ---- Loader ---- */
   const loader = document.getElementById('loader');
-  const loaderProgress = document.getElementById('loaderProgress');
-  const loaderCounter = document.getElementById('loaderCounter');
-  let progress = 0;
-
-  const loaderInterval = setInterval(() => {
-    progress += Math.random() * 15;
-    if (progress >= 100) {
-      progress = 100;
-      clearInterval(loaderInterval);
-      setTimeout(hideLoader, 300);
-    }
-    loaderProgress.style.width = progress + '%';
-    loaderCounter.textContent = Math.floor(progress) + '%';
-  }, 80);
 
   function hideLoader() {
     loader.classList.add('hidden');
     document.body.classList.remove('loading');
     initAnimations();
   }
+
+  // Hide after fonts/resources settle — 1.8s feels right with the animation
+  window.addEventListener('load', () => setTimeout(hideLoader, 1800));
+  // Fallback in case load fires late
+  setTimeout(hideLoader, 3500);
 
   /* ---- Custom Cursor ---- */
   const cursor = document.getElementById('cursor');

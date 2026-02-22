@@ -120,9 +120,12 @@ input, textarea, select {
   background: var(--black);
   z-index: 9999;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.6s var(--transition), visibility 0.6s;
+  gap: 3rem;
+  transition: opacity 0.8s var(--transition), visibility 0.8s;
+  overflow: hidden;
 }
 
 .loader.hidden {
@@ -130,44 +133,159 @@ input, textarea, select {
   visibility: hidden;
 }
 
-.loader-inner {
-  text-align: center;
-  width: 200px;
-}
-
-.loader-logo {
-  font-family: var(--font-primary);
-  font-size: 2.5rem;
-  font-weight: 700;
-  letter-spacing: 0.3em;
-  color: var(--white);
-  margin-bottom: 2rem;
-}
-
-.loader-bar {
-  width: 100%;
-  height: 1px;
-  background: var(--border-2);
-  position: relative;
-  overflow: hidden;
-}
-
-.loader-progress {
+/* Shifting aurora background */
+.loader-aurora {
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 0%;
-  background: var(--highlight);
-  transition: width 0.1s linear;
+  inset: -50%;
+  background: conic-gradient(
+    from 0deg at 40% 50%,
+    transparent 0deg,
+    rgba(200, 245, 90, 0.07) 60deg,
+    transparent 120deg,
+    rgba(120, 80, 255, 0.06) 200deg,
+    transparent 260deg,
+    rgba(200, 245, 90, 0.05) 320deg,
+    transparent 360deg
+  );
+  animation: auroraSpin 12s linear infinite;
+  filter: blur(60px);
 }
 
-.loader-counter {
-  margin-top: 1rem;
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
-  color: var(--white-3);
+/* Scene wrapper */
+.loader-scene {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Central glowing orb */
+.loader-orb {
+  position: absolute;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 35% 35%,
+    rgba(230, 255, 140, 0.9),
+    rgba(200, 245, 90, 0.7) 30%,
+    rgba(100, 200, 50, 0.4) 60%,
+    transparent 80%
+  );
+  box-shadow:
+    0 0 20px 6px rgba(200, 245, 90, 0.35),
+    0 0 60px 20px rgba(200, 245, 90, 0.15),
+    0 0 100px 40px rgba(150, 240, 60, 0.06);
+  animation: orbPulse 2.4s ease-in-out infinite;
+}
+
+.loader-orb-core {
+  position: absolute;
+  inset: 20%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 30%, #ffffff, rgba(220, 255, 150, 0.6));
+  filter: blur(4px);
+  animation: orbPulse 2.4s ease-in-out infinite reverse;
+}
+
+/* Primary spinning ring */
+.loader-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1.5px solid transparent;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgba(200, 245, 90, 0.9) 80deg,
+    rgba(200, 245, 90, 0.1) 160deg,
+    transparent 200deg
+  ) border-box;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) padding-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  animation: spin 1.8s linear infinite;
+  filter: drop-shadow(0 0 6px rgba(200, 245, 90, 0.7));
+}
+
+/* Counter-spinning outer ring */
+.loader-ring-2 {
+  position: absolute;
+  inset: -16px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  background: conic-gradient(
+    from 180deg,
+    transparent 0deg,
+    rgba(160, 120, 255, 0.5) 60deg,
+    rgba(200, 245, 90, 0.2) 120deg,
+    transparent 160deg
+  ) border-box;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) padding-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  animation: spin 3s linear infinite reverse;
+  filter: drop-shadow(0 0 4px rgba(160, 120, 255, 0.4));
+}
+
+/* Orbiting spark dots */
+.loader-sparks {
+  position: absolute;
+  inset: -28px;
+  animation: spin 4s linear infinite;
+}
+
+.loader-sparks span {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--highlight);
+  box-shadow: 0 0 6px 2px rgba(200, 245, 90, 0.8);
+}
+
+.loader-sparks span:nth-child(1) { top: 0; left: 50%; transform: translateX(-50%); opacity: 1; }
+.loader-sparks span:nth-child(2) { top: 50%; right: 0; transform: translateY(-50%); opacity: 0.5; width: 3px; height: 3px; }
+.loader-sparks span:nth-child(3) { bottom: 0; left: 50%; transform: translateX(-50%); opacity: 0.7; }
+.loader-sparks span:nth-child(4) { top: 50%; left: 0; transform: translateY(-50%); opacity: 0.3; width: 2px; height: 2px; }
+
+/* Wordmark */
+.loader-wordmark {
   font-family: var(--font-primary);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.45em;
+  color: rgba(255, 255, 255, 0.25);
+  position: relative;
+  z-index: 1;
+  animation: wordmarkBreath 2.4s ease-in-out infinite;
+}
+
+/* Loader keyframes */
+@keyframes auroraSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes orbPulse {
+  0%, 100% { transform: scale(1);    opacity: 1; }
+  50%       { transform: scale(1.12); opacity: 0.85; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes wordmarkBreath {
+  0%, 100% { opacity: 0.25; }
+  50%       { opacity: 0.55; }
 }
 
 /* ---- Navigation ---- */
