@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MONO — Tokyo-born Creative Studio in Saigon</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body class="loading">
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">MONO</div>
+      <div class="loader-bar">
+        <div class="loader-progress" id="loaderProgress"></div>
+      </div>
+      <div class="loader-counter" id="loaderCounter">0%</div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-logo">
+      <a href="#" class="logo-link">MONO<span class="logo-dot">.</span></a>
+    </div>
+    <div class="nav-links">
+      <a href="#work" class="nav-link" data-text="Work">Work</a>
+      <a href="#studio" class="nav-link" data-text="Studio">Studio</a>
+      <a href="#services" class="nav-link" data-text="Services">Services</a>
+      <a href="#contact" class="nav-link contact-btn">Let's Talk →</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-inner">
+      <a href="#work" class="mobile-nav-link">Work</a>
+      <a href="#studio" class="mobile-nav-link">Studio</a>
+      <a href="#services" class="mobile-nav-link">Services</a>
+      <a href="#contact" class="mobile-nav-link">Contact</a>
+    </div>
+    <div class="mobile-menu-footer">
+      <span>Tokyo-born. Saigon-raised.</span>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-label reveal-text">
+        <span>Creative Studio — Est. 2013</span>
+      </div>
+      <h1 class="hero-title">
+        <span class="line"><span class="word">We</span> <span class="word">create</span></span>
+        <span class="line"><span class="word">digital</span> <span class="word highlight">experiences</span></span>
+        <span class="line"><span class="word">that</span> <span class="word">inspire.</span></span>
+      </h1>
+      <div class="hero-sub reveal-text">
+        <p>A Tokyo-born, digitally-driven creative studio based in Saigon.<br />We integrate. We collaborate. We challenge.</p>
+      </div>
+      <div class="hero-cta reveal-text">
+        <a href="#work" class="btn-primary">View Our Work</a>
+        <a href="#studio" class="btn-ghost">About Studio</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+    <div class="hero-marquee">
+      <div class="marquee-track">
+        <span>Branding</span><span>·</span>
+        <span>Digital</span><span>·</span>
+        <span>Strategy</span><span>·</span>
+        <span>Motion</span><span>·</span>
+        <span>UX/UI</span><span>·</span>
+        <span>Content</span><span>·</span>
+        <span>Branding</span><span>·</span>
+        <span>Digital</span><span>·</span>
+        <span>Strategy</span><span>·</span>
+        <span>Motion</span><span>·</span>
+        <span>UX/UI</span><span>·</span>
+        <span>Content</span><span>·</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats">
+    <div class="stats-inner">
+      <div class="stat-item" data-count="120">
+        <div class="stat-number"><span class="count">120</span><span>+</span></div>
+        <div class="stat-label">Projects Delivered</div>
+      </div>
+      <div class="stat-item" data-count="40">
+        <div class="stat-number"><span class="count">40</span><span>+</span></div>
+        <div class="stat-label">Global Clients</div>
+      </div>
+      <div class="stat-item" data-count="10">
+        <div class="stat-number"><span class="count">10</span><span>+</span></div>
+        <div class="stat-label">Years of Experience</div>
+      </div>
+      <div class="stat-item" data-count="25">
+        <div class="stat-number"><span class="count">25</span><span>+</span></div>
+        <div class="stat-label">Awards Won</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work Section -->
+  <section class="work" id="work">
+    <div class="section-header">
+      <div class="section-tag">Selected Work</div>
+      <h2 class="section-title">
+        <span class="line-wrap"><span class="animate-line">Projects that</span></span>
+        <span class="line-wrap"><span class="animate-line">push <em>boundaries.</em></span></span>
+      </h2>
+    </div>
+
+    <div class="projects-grid">
+
+      <article class="project-card project-large" data-index="01">
+        <div class="project-img-wrap">
+          <div class="project-img" style="background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 50%, #16213e 100%);">
+            <div class="project-img-overlay"></div>
+            <div class="project-mockup brand-mockup">
+              <div class="mock-logo">NK</div>
+              <div class="mock-tagline">Fashion Forward</div>
+            </div>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-meta">
+            <span class="project-num">01</span>
+            <span class="project-tags">Branding · Identity</span>
+          </div>
+          <h3 class="project-title">NAOKI — Brand Identity System</h3>
+          <p class="project-desc">Complete brand overhaul for a Tokyo-based fashion label. From visual identity to digital presence.</p>
+          <a href="#" class="project-link">View Case Study <span class="arrow">→</span></a>
+        </div>
+      </article>
+
+      <article class="project-card" data-index="02">
+        <div class="project-img-wrap">
+          <div class="project-img" style="background: linear-gradient(135deg, #1a0533 0%, #6b21a8 100%);">
+            <div class="project-img-overlay"></div>
+            <div class="project-mockup ui-mockup">
+              <div class="mock-phone">
+                <div class="mock-screen">
+                  <div class="mock-bar"></div>
+                  <div class="mock-bar short"></div>
+                  <div class="mock-circle"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-meta">
+            <span class="project-num">02</span>
+            <span class="project-tags">Digital · UX/UI</span>
+          </div>
+          <h3 class="project-title">Vela — App Experience</h3>
+          <p class="project-desc">Crafting intuitive digital flows for a next-gen fintech platform.</p>
+          <a href="#" class="project-link">View Case Study <span class="arrow">→</span></a>
+        </div>
+      </article>
+
+      <article class="project-card" data-index="03">
+        <div class="project-img-wrap">
+          <div class="project-img" style="background: linear-gradient(135deg, #0d1117 0%, #21262d 50%, #161b22 100%);">
+            <div class="project-img-overlay"></div>
+            <div class="project-mockup type-mockup">
+              <div class="mock-type-a">AW</div>
+              <div class="mock-type-b">2024</div>
+            </div>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-meta">
+            <span class="project-num">03</span>
+            <span class="project-tags">Campaign · Content</span>
+          </div>
+          <h3 class="project-title">Autumn/Winter Campaign 2024</h3>
+          <p class="project-desc">Full-scope campaign strategy and content production for seasonal launch.</p>
+          <a href="#" class="project-link">View Case Study <span class="arrow">→</span></a>
+        </div>
+      </article>
+
+      <article class="project-card project-wide" data-index="04">
+        <div class="project-img-wrap">
+          <div class="project-img" style="background: linear-gradient(135deg, #0a0a0a 0%, #1c1c1c 40%, #2d1b00 100%);">
+            <div class="project-img-overlay"></div>
+            <div class="project-mockup web-mockup">
+              <div class="mock-browser">
+                <div class="mock-browser-bar">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="mock-browser-content">
+                  <div class="mock-hero-text">SAIGON<br/>NIGHTS</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-meta">
+            <span class="project-num">04</span>
+            <span class="project-tags">Web · Motion · Branding</span>
+          </div>
+          <h3 class="project-title">Saigon Nights — Digital Experience</h3>
+          <p class="project-desc">An immersive web experience celebrating Saigon's vibrant nightlife culture, blending motion design with storytelling.</p>
+          <a href="#" class="project-link">View Case Study <span class="arrow">→</span></a>
+        </div>
+      </article>
+
+      <article class="project-card" data-index="05">
+        <div class="project-img-wrap">
+          <div class="project-img" style="background: linear-gradient(135deg, #003333 0%, #006666 100%);">
+            <div class="project-img-overlay"></div>
+            <div class="project-mockup brand-mockup">
+              <div class="mock-logo" style="font-size:2rem;">OKO</div>
+              <div class="mock-tagline">Sustainable Living</div>
+            </div>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-meta">
+            <span class="project-num">05</span>
+            <span class="project-tags">Branding · Packaging</span>
+          </div>
+          <h3 class="project-title">OKO — Eco Brand Identity</h3>
+          <p class="project-desc">Sustainable brand identity for an eco-conscious lifestyle label from Ho Chi Minh City.</p>
+          <a href="#" class="project-link">View Case Study <span class="arrow">→</span></a>
+        </div>
+      </article>
+
+      <article class="project-card" data-index="06">
+        <div class="project-img-wrap">
+          <div class="project-img" style="background: linear-gradient(135deg, #1a0000 0%, #660000 100%);">
+            <div class="project-img-overlay"></div>
+            <div class="project-mockup type-mockup">
+              <div class="mock-type-a" style="font-size:3rem; letter-spacing:-2px;">RE</div>
+              <div class="mock-type-b">BIRTH</div>
+            </div>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-meta">
+            <span class="project-num">06</span>
+            <span class="project-tags">Motion · Film</span>
+          </div>
+          <h3 class="project-title">Rebirth — Motion Film</h3>
+          <p class="project-desc">Conceptual motion piece exploring themes of transformation and renewal through experimental visuals.</p>
+          <a href="#" class="project-link">View Case Study <span class="arrow">→</span></a>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="work-cta">
+      <a href="#" class="btn-outline">See All Projects</a>
+    </div>
+  </section>
+
+  <!-- Studio Section -->
+  <section class="studio" id="studio">
+    <div class="studio-inner">
+      <div class="studio-left">
+        <div class="section-tag">About Studio</div>
+        <h2 class="studio-title">
+          <span class="line-wrap"><span class="animate-line">We are a collective</span></span>
+          <span class="line-wrap"><span class="animate-line">of <em>digital natives</em></span></span>
+          <span class="line-wrap"><span class="animate-line">who challenge.</span></span>
+        </h2>
+        <div class="studio-visual">
+          <div class="studio-img-block">
+            <div class="studio-img-inner">
+              <div class="studio-img-placeholder">
+                <div class="studio-dot-grid">
+                  <div class="dot-row">
+                    <span></span><span></span><span></span><span></span><span></span>
+                  </div>
+                  <div class="dot-row">
+                    <span></span><span></span><span></span><span></span><span></span>
+                  </div>
+                  <div class="dot-row">
+                    <span></span><span></span><span></span><span></span><span></span>
+                  </div>
+                </div>
+                <div class="studio-big-text">MONO</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="studio-right">
+        <p class="studio-desc">
+          Born in Tokyo, raised in Saigon — MONO is more than a studio. We are a carefully assembled collective of creatives, strategists, and technologists united by one belief: design has the power to transform businesses and move people.
+        </p>
+        <p class="studio-desc">
+          We operate without hierarchy. Every member of our team is personally involved from brief to execution, ensuring quality runs through every pixel, every word, every interaction.
+        </p>
+        <div class="studio-values">
+          <div class="value-item">
+            <div class="value-icon">→</div>
+            <div class="value-content">
+              <h4>Integrate</h4>
+              <p>We blend disciplines seamlessly — strategy meets design meets technology.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">→</div>
+            <div class="value-content">
+              <h4>Collaborate</h4>
+              <p>Deep partnerships with our clients make better work, always.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">→</div>
+            <div class="value-content">
+              <h4>Challenge</h4>
+              <p>We question assumptions, push limits, and refuse the ordinary.</p>
+            </div>
+          </div>
+        </div>
+        <a href="#contact" class="btn-primary">Start a Project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <div class="section-header">
+      <div class="section-tag">What We Do</div>
+      <h2 class="section-title">
+        <span class="line-wrap"><span class="animate-line">Our services</span></span>
+        <span class="line-wrap"><span class="animate-line">are <em>your edge.</em></span></span>
+      </h2>
+    </div>
+
+    <div class="services-list">
+      <div class="service-item" data-num="01">
+        <div class="service-num">01</div>
+        <div class="service-content">
+          <h3 class="service-title">Brand Design</h3>
+          <p class="service-desc">Identity systems, visual language, and brand strategy that create lasting impressions across every touchpoint.</p>
+          <div class="service-tags">
+            <span>Identity</span>
+            <span>Logo</span>
+            <span>Guidelines</span>
+            <span>Packaging</span>
+          </div>
+        </div>
+        <div class="service-arrow">↗</div>
+      </div>
+
+      <div class="service-item" data-num="02">
+        <div class="service-num">02</div>
+        <div class="service-content">
+          <h3 class="service-title">Digital Design</h3>
+          <p class="service-desc">Websites and digital products crafted with intention — where aesthetics and function move together.</p>
+          <div class="service-tags">
+            <span>Web</span>
+            <span>UX/UI</span>
+            <span>Apps</span>
+            <span>Motion</span>
+          </div>
+        </div>
+        <div class="service-arrow">↗</div>
+      </div>
+
+      <div class="service-item" data-num="03">
+        <div class="service-num">03</div>
+        <div class="service-content">
+          <h3 class="service-title">Communication</h3>
+          <p class="service-desc">Campaigns, content, and creative direction that tell your story to the people who matter.</p>
+          <div class="service-tags">
+            <span>Campaign</span>
+            <span>Content</span>
+            <span>Social</span>
+            <span>Copy</span>
+          </div>
+        </div>
+        <div class="service-arrow">↗</div>
+      </div>
+
+      <div class="service-item" data-num="04">
+        <div class="service-num">04</div>
+        <div class="service-content">
+          <h3 class="service-title">Motion & Film</h3>
+          <p class="service-desc">From brand films to dynamic UI animations — motion that adds emotion and brings concepts to life.</p>
+          <div class="service-tags">
+            <span>Animation</span>
+            <span>Film</span>
+            <span>3D</span>
+            <span>Visual FX</span>
+          </div>
+        </div>
+        <div class="service-arrow">↗</div>
+      </div>
+
+      <div class="service-item" data-num="05">
+        <div class="service-num">05</div>
+        <div class="service-content">
+          <h3 class="service-title">Strategy & Consulting</h3>
+          <p class="service-desc">Research-backed creative strategy and consulting to position your brand with clarity and purpose.</p>
+          <div class="service-tags">
+            <span>Research</span>
+            <span>Strategy</span>
+            <span>Positioning</span>
+          </div>
+        </div>
+        <div class="service-arrow">↗</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clients Section -->
+  <section class="clients">
+    <div class="section-tag centered">Trusted By</div>
+    <div class="clients-marquee">
+      <div class="clients-track">
+        <span>Uniqlo</span>
+        <span>Sony</span>
+        <span>Nike</span>
+        <span>Grab</span>
+        <span>Vingroup</span>
+        <span>Heineken</span>
+        <span>Samsung</span>
+        <span>ANA</span>
+        <span>Uniqlo</span>
+        <span>Sony</span>
+        <span>Nike</span>
+        <span>Grab</span>
+        <span>Vingroup</span>
+        <span>Heineken</span>
+        <span>Samsung</span>
+        <span>ANA</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <div class="section-header">
+      <div class="section-tag">Kind Words</div>
+    </div>
+    <div class="testimonial-slider" id="testimonialSlider">
+      <div class="testimonial active">
+        <blockquote>
+          "MONO didn't just design our brand — they defined who we are. Their ability to translate our values into a visual language that resonates globally is unmatched."
+        </blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar">KS</div>
+          <div class="author-info">
+            <strong>Kenji Suzuki</strong>
+            <span>CEO, Naoki Fashion Group</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <blockquote>
+          "Working with MONO felt like having an extension of our own team. They bring an incredible energy and a relentless standard of quality to every deliverable."
+        </blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar">ML</div>
+          <div class="author-info">
+            <strong>Marie Leblanc</strong>
+            <span>Head of Marketing, Vela Finance</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <blockquote>
+          "The Saigon Nights campaign exceeded every expectation. MONO understood the brief on a cultural level that blew us away — true creative partners."
+        </blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar">TN</div>
+          <div class="author-info">
+            <strong>Thao Nguyen</strong>
+            <span>Brand Director, Saigon Nights</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-nav">
+      <button class="t-prev" id="tPrev">←</button>
+      <div class="t-dots" id="tDots">
+        <span class="active"></span>
+        <span></span>
+        <span></span>
+      </div>
+      <button class="t-next" id="tNext">→</button>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <div class="contact-left">
+        <div class="section-tag">Get In Touch</div>
+        <h2 class="contact-title">
+          <span class="line-wrap"><span class="animate-line">Have a project</span></span>
+          <span class="line-wrap"><span class="animate-line">in mind? <em>Let's</em></span></span>
+          <span class="line-wrap"><span class="animate-line"><em>talk.</em></span></span>
+        </h2>
+        <div class="contact-details">
+          <div class="contact-detail">
+            <span class="detail-label">Email</span>
+            <a href="mailto:hello@mono.vn" class="detail-value">hello@mono.vn</a>
+          </div>
+          <div class="contact-detail">
+            <span class="detail-label">Based in</span>
+            <span class="detail-value">Ho Chi Minh City, Vietnam</span>
+          </div>
+          <div class="contact-detail">
+            <span class="detail-label">Social</span>
+            <div class="social-links">
+              <a href="#" class="social-link">Instagram</a>
+              <a href="#" class="social-link">Behance</a>
+              <a href="#" class="social-link">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-right">
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="What do we call you?" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="service">Service Needed</label>
+            <select id="service" name="service">
+              <option value="" disabled selected>Select a service</option>
+              <option>Brand Design</option>
+              <option>Digital Design</option>
+              <option>Communication</option>
+              <option>Motion & Film</option>
+              <option>Strategy & Consulting</option>
+              <option>Something Else</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Tell Us About Your Project</label>
+            <textarea id="message" name="message" rows="4" placeholder="Brief us on your vision..."></textarea>
+          </div>
+          <button type="submit" class="btn-submit">
+            <span>Send Message</span>
+            <span class="btn-arrow">→</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-logo">MONO<span>.</span></div>
+      <div class="footer-tagline">Tokyo-born. Saigon-raised.</div>
+    </div>
+    <div class="footer-middle">
+      <div class="footer-col">
+        <h5>Studio</h5>
+        <a href="#studio">About</a>
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <a href="#">Brand Design</a>
+        <a href="#">Digital Design</a>
+        <a href="#">Communication</a>
+        <a href="#">Motion & Film</a>
+      </div>
+      <div class="footer-col">
+        <h5>Social</h5>
+        <a href="#">Instagram</a>
+        <a href="#">Behance</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">Dribbble</a>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <a href="mailto:hello@mono.vn">hello@mono.vn</a>
+        <span>Ho Chi Minh City</span>
+        <span>Vietnam</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 MONO Creative Studio. All rights reserved.</span>
+      <span>Crafted with obsession.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
